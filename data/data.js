@@ -34,14 +34,20 @@ export const playerData = [
 export const teamData = [
   {
     id: 1,
+    name: "New Orleans",
     logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/2/21/New_Orleans_Pelicans.png/200px-New_Orleans_Pelicans.png",
+    description: "Western Conference ",
   },
   {
     id: 2,
+    name: "Boston Celtics",
     logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/6/65/Celtics_de_Boston_logo.svg/1024px-Celtics_de_Boston_logo.svg.png",
+    description: "Eastern Conference",
   },
   {
     id: 3,
+    name: "Brooklyn Nets",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Brooklyn_Nets_newlogo.svg/130px-Brooklyn_Nets_newlogo.svg.png",
+    description: "Eastern Conference",
   },
 ];

@@ -1,10 +1,10 @@
 import { View, Text, Image, FlatList, StyleSheet } from "react-native";
 import Header from "../components/Header";
 
-function OptionScreen() {
+function AboutScreen() {
   return (
     <View style={style.container}>
-      <Header headerText={"Option"} flexPosition={"center"} />
+      <Header headerText={"About"} flexPosition={"center"} />
     </View>
   );
 }
@@ -17,4 +17,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default OptionScreen;
+export default AboutScreen;

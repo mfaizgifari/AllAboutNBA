@@ -1,35 +1,54 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
-import TeamCard from "./PlayerCard";
+import { View, Text, StyleSheet, Image } from "react-native";
 
-const TeamCard = () => {
-  const teams = [
-    {
-      name: "Team A",
-      logo: "https://via.placeholder.com/50",
-      description: "Description for Team A",
-    },
-    {
-      name: "Team B",
-      logo: "https://via.placeholder.com/50",
-      description: "Description for Team B",
-    },
-  ];
+const TeamCard = ({ team }) => {
+  const { name, logo, description } = team;
 
   return (
-    <View style={styles.container}>
-      {teams.map((team, index) => (
-        <TeamCard key={index} team={team} />
-      ))}
+    <View style={styles.card}>
+      <Image source={{ uri: logo }} style={styles.logo} />
+      <View style={styles.teamcard}>
+        <Text style={styles.teamName}>{name}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  card: {
+    flexDirection: "row",
+    backgroundColor: "#fff",
+    borderRadius: 8,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginBottom: 10,
+    padding: 15,
+  },
+  logo: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 15,
+  },
+  teamcard: {
     flex: 1,
-    padding: 20,
-    backgroundColor: "#f0f0f0",
+    justifyContent: "center",
+  },
+  teamName: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 5,
+  },
+  description: {
+    fontSize: 14,
+    color: "gray",
   },
 });
 

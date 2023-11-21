@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Text } from "react-native";
 import * as Font from "expo-font";
 import HomeScreen from "./pages/HomeScreen";
-import OptionScreen from "./pages/OptionScreen";
+import AboutScreen from "./pages/AboutScreen";
 import NewsScreen from "./pages/NewsScreen";
 import TeamsScreen from "./pages/TeamsScreen";
 import PlayersScreen from "./pages/PlayersScreen";
@@ -39,14 +39,14 @@ export default function App() {
             if (route.name === "Home") {
               iconName = "home";
               color = focused ? "black" : "lightgray";
-            } else if (route.name === "Option") {
-              iconName = "person";
+            } else if (route.name === "About") {
+              iconName = "information-circle";
               color = focused ? "black" : "lightgray";
             } else if (route.name === "News") {
-              iconName = "basketball-outline";
+              iconName = "newspaper";
               color = focused ? "black" : "lightgray";
             } else if (route.name === "Players") {
-              iconName = "basketball-outline";
+              iconName = "people";
               color = focused ? "black" : "lightgray";
             } else if (route.name === "Teams") {
               iconName = "basketball-outline";
@@ -60,8 +60,8 @@ export default function App() {
 
             if (route.name === "Home") {
               label = focused ? "Home" : "Home";
-            } else if (route.name === "Option") {
-              label = focused ? "Option" : "Option";
+            } else if (route.name === "About") {
+              label = focused ? "About" : "About";
             } else if (route.name === "News") {
               label = focused ? "News" : "News";
             } else if (route.name === "Players") {
@@ -87,9 +87,9 @@ export default function App() {
       >
         <bottomTabNavigator.Screen name="Home" component={HomeScreen} />
         <bottomTabNavigator.Screen name="News" component={NewsScreen} />
-        <bottomTabNavigator.Screen name="Players" component={PlayersScreen} />
         <bottomTabNavigator.Screen name="Teams" component={TeamsScreen} />
-        <bottomTabNavigator.Screen name="Option" component={OptionScreen} />
+        <bottomTabNavigator.Screen name="Players" component={PlayersScreen} />
+        <bottomTabNavigator.Screen name="About" component={AboutScreen} />
       </bottomTabNavigator.Navigator>
     </NavigationContainer>
   );

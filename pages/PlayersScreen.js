@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 import {
   View,
   Text,
@@ -7,15 +8,22 @@ import {
   Alert,
   TouchableOpacity,
   SafeAreaView,
+  ScrollView,
 } from "react-native";
 import axios from "axios";
-
+import PlayerCard from "../components/PlayerCard";
 import Header from "../components/Header";
+import { playerData, teamData } from "../data/data";
 
-function PlayersScreen() {
+function TeamsScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Header headerText={"Players List"} flexPosition={"center"} />
+      <Header headerText={"Team List"} flexPosition={"center"} />
+      <ScrollView showsHorizontalScrollIndicator={false}>
+        {playerData.map((player, index) => (
+          <PlayerCard key={index} player={player} />
+        ))}
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -28,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default PlayersScreen;
+export default TeamsScreen;

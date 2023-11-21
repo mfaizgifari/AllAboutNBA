@@ -21,17 +21,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 1,
     shadowRadius: 4,
     elevation: 5,
-    justifyContent: "center", // Center content vertically
+    justifyContent: "center",
     alignItems: "center",
     marginRight: 20,
     width: 200,
-    height: 200, // Adjust the aspect ratio of the card
+    height: 200,
   },
   logo: {
-    margin: 20,
     flex: 1,
-    width: 200,
-    height: 150,
+    width: "100%",
+    height: "100%",
   },
 });
 
