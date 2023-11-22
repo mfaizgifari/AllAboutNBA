@@ -2,14 +2,23 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
 const TeamCard = ({ team }) => {
-  const { name, logo, description } = team;
+  const { full_name, abbreviation, city, conference } = team;
 
   return (
     <View style={styles.card}>
-      <Image source={{ uri: logo }} style={styles.logo} />
-      <View style={styles.teamcard}>
-        <Text style={styles.teamName}>{name}</Text>
-        <Text style={styles.description}>{description}</Text>
+      <View style={styles.logoContainer}>
+        {/* Assuming the API provides a logo URL for each team */}
+        {/* Replace 'logo' with the appropriate property name */}
+        <Image
+          source={{ uri: team.logo }}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+      </View>
+      <View style={styles.cardContent}>
+        <Text style={styles.teamName}>{full_name}</Text>
+        <Text style={styles.details}>{`${city}, ${abbreviation}`}</Text>
+        <Text style={styles.details}>{`Conference: ${conference}`}</Text>
       </View>
     </View>
   );
@@ -31,22 +40,24 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     padding: 15,
   },
+  logoContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   logo: {
     width: 50,
     height: 50,
-    borderRadius: 25,
-    marginRight: 15,
   },
-  teamcard: {
+  cardContent: {
     flex: 1,
     justifyContent: "center",
+    marginLeft: 10,
   },
   teamName: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 5,
   },
-  description: {
+  details: {
     fontSize: 14,
     color: "gray",
   },

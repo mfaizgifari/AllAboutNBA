@@ -3,14 +3,16 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { Text } from "react-native";
 import * as Font from "expo-font";
+import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "./pages/HomeScreen";
 import AboutScreen from "./pages/AboutScreen";
-import NewsScreen from "./pages/NewsScreen";
 import TeamsScreen from "./pages/TeamsScreen";
 import PlayersScreen from "./pages/PlayersScreen";
+import DetailPlayer from "./pages/DetailPlayer";
 import Header from "./components/Header";
 
 const bottomTabNavigator = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
@@ -42,9 +44,6 @@ export default function App() {
             } else if (route.name === "About") {
               iconName = "information-circle";
               color = focused ? "black" : "lightgray";
-            } else if (route.name === "News") {
-              iconName = "newspaper";
-              color = focused ? "black" : "lightgray";
             } else if (route.name === "Players") {
               iconName = "people";
               color = focused ? "black" : "lightgray";
@@ -62,8 +61,6 @@ export default function App() {
               label = focused ? "Home" : "Home";
             } else if (route.name === "About") {
               label = focused ? "About" : "About";
-            } else if (route.name === "News") {
-              label = focused ? "News" : "News";
             } else if (route.name === "Players") {
               label = focused ? "Players" : "Players";
             } else if (route.name === "Teams") {
@@ -86,10 +83,14 @@ export default function App() {
         })}
       >
         <bottomTabNavigator.Screen name="Home" component={HomeScreen} />
-        <bottomTabNavigator.Screen name="News" component={NewsScreen} />
         <bottomTabNavigator.Screen name="Teams" component={TeamsScreen} />
         <bottomTabNavigator.Screen name="Players" component={PlayersScreen} />
         <bottomTabNavigator.Screen name="About" component={AboutScreen} />
+        <bottomTabNavigator.Screen
+          name="DetailPlayer"
+          component={DetailPlayer}
+          options={{ tabBarButton: () => null }} // Hide this screen from tabs
+        />
       </bottomTabNavigator.Navigator>
     </NavigationContainer>
   );

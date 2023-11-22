@@ -1,17 +1,30 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-const PlayerCard = ({ player }) => {
-  const { name, photo, description } = player;
+const PlayerCard = ({ player, navigation }) => {
+  const { first_name, last_name, height_inches } = player;
+
+  const handlePress = () => {
+    navigation.navigate("DetailPlayer", { player }); // Navigate to PlayerDetailScreen with player data
+  };
 
   return (
-    <View style={styles.card}>
-      <Image source={{ uri: photo }} style={styles.photo} />
-      <View style={styles.cardContent}>
-        <Text style={styles.playerName}>{name}</Text>
-        <Text style={styles.description}>{description}</Text>
+    <TouchableOpacity onPress={handlePress}>
+      <View style={styles.card}>
+        <Image
+          source={{
+            uri: `https://via.placeholder.com/50x50?text=${first_name}`,
+          }}
+          style={styles.photo}
+        />
+        <View style={styles.cardContent}>
+          <Text style={styles.playerName}>{`${first_name} ${last_name}`}</Text>
+          <Text
+            style={styles.description}
+          >{`Height: ${height_inches} inches`}</Text>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
