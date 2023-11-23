@@ -1,11 +1,20 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const BigCard = ({ logo }) => {
+  const navigation = useNavigation();
+
+  const pressHandler = () => {
+    navigation.navigate("DetailTeam", { logo }); // Navigate to DetailTeam screen with logo data
+  };
+
   return (
-    <View style={styles.card}>
-      <Image source={{ uri: logo }} style={styles.logo} />
-    </View>
+    <TouchableOpacity onPress={pressHandler}>
+      <View style={styles.card}>
+        <Image source={{ uri: logo }} style={styles.logo} />
+      </View>
+    </TouchableOpacity>
   );
 };
 

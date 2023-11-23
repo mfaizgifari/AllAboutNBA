@@ -1,21 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
+import PlayerCard from "../components/PlayerCard"; // Import your PlayerCard component
+import axios from "axios";
 
-const DetailPlayer = ({ route }) => {
+const DetailPlayer = ({ navigation, route }) => {
   const { player } = route.params;
-
-  // Assuming player contains various details you want to display
-  const { first_name, last_name, height_inches, team, position } = player;
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{`${first_name} ${last_name}`}</Text>
-      <View style={styles.detail}>
-        <Text>Height: {height_inches} inches</Text>
-        <Text>Team: {team}</Text>
-        <Text>Position: {position}</Text>
-        {/* Add more player details here */}
-      </View>
+      <PlayerCard player={player} navigation={navigation} />
     </View>
   );
 };
@@ -25,15 +18,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 10,
-  },
-  detail: {
-    alignItems: "flex-start",
   },
 });
 

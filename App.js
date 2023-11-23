@@ -9,6 +9,7 @@ import AboutScreen from "./pages/AboutScreen";
 import TeamsScreen from "./pages/TeamsScreen";
 import PlayersScreen from "./pages/PlayersScreen";
 import DetailPlayer from "./pages/DetailPlayer";
+import DetailTeam from "./pages/DetailTeam";
 import Header from "./components/Header";
 
 const bottomTabNavigator = createBottomTabNavigator();
@@ -17,6 +18,24 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Main"
+          component={MainNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DetailPlayer"
+          component={DetailPlayer}
+          // options={{ headerShown: false }}
+        />
+        <Stack.Screen name="DetailTeam" component={DetailTeam} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+
+  function MainNavigator() {
+    return (
       <bottomTabNavigator.Navigator
         initialRouteName="Home"
         screenOptions={({ route }) => ({
@@ -86,12 +105,7 @@ export default function App() {
         <bottomTabNavigator.Screen name="Teams" component={TeamsScreen} />
         <bottomTabNavigator.Screen name="Players" component={PlayersScreen} />
         <bottomTabNavigator.Screen name="About" component={AboutScreen} />
-        <bottomTabNavigator.Screen
-          name="DetailPlayer"
-          component={DetailPlayer}
-          options={{ tabBarButton: () => null }} // Hide this screen from tabs
-        />
       </bottomTabNavigator.Navigator>
-    </NavigationContainer>
-  );
+    );
+  }
 }

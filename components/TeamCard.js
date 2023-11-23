@@ -6,15 +6,6 @@ const TeamCard = ({ team }) => {
 
   return (
     <View style={styles.card}>
-      <View style={styles.logoContainer}>
-        {/* Assuming the API provides a logo URL for each team */}
-        {/* Replace 'logo' with the appropriate property name */}
-        <Image
-          source={{ uri: team.logo }}
-          style={styles.logo}
-          resizeMode="contain"
-        />
-      </View>
       <View style={styles.cardContent}>
         <Text style={styles.teamName}>{full_name}</Text>
         <Text style={styles.details}>{`${city}, ${abbreviation}`}</Text>
@@ -39,14 +30,6 @@ const styles = StyleSheet.create({
     elevation: 5,
     marginBottom: 10,
     padding: 15,
-  },
-  logoContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  logo: {
-    width: 50,
-    height: 50,
   },
   cardContent: {
     flex: 1,
