@@ -1,14 +1,27 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import BigCard from "../components/BigCard";
+import Header from "../components/Header";
+import { teamData } from "../data/data";
 
 const DetailTeam = ({ route }) => {
-  const { logo, description } = route.params;
+  const { logo, name, description, starters } = route.params;
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: logo }} style={styles.logo} />
-      <Text style={styles.text}>{description}</Text>
+      <Header headerText={name} flexPosition={"center"} />
+      <View style={styles.content}>
+        <Image source={{ uri: logo }} style={styles.logo} />
+        <Text style={styles.description}>{description}</Text>
+        <Text style={styles.startersHeader}>Starters:</Text>
+        <View>
+          {starters &&
+            starters.map((player, index) => (
+              <Text key={index} style={styles.starters}>
+                {player.name}
+              </Text>
+            ))}
+        </View>
+      </View>
     </View>
   );
 };
@@ -16,9 +29,11 @@ const DetailTeam = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#eeeeee",
+  },
+  content: {
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff",
+    padding: 20,
   },
   logo: {
     width: 150,
@@ -26,10 +41,19 @@ const styles = StyleSheet.create({
     borderRadius: 75,
     marginBottom: 20,
   },
-  text: {
-    fontSize: 20,
+  description: {
+    fontSize: 16,
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  startersHeader: {
+    fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
+  },
+  starters: {
+    fontSize: 16,
+    marginBottom: 5,
   },
 });
 

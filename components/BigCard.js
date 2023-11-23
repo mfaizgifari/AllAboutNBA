@@ -3,6 +3,7 @@ import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const BigCard = ({ logo }) => {
+  const { name, description } = logo;
   const navigation = useNavigation();
 
   const pressHandler = () => {
