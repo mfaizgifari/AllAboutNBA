@@ -84,7 +84,7 @@ export const playerData = [
 export const teamData = [
   {
     id: 1,
-    name: "Los Angeles Lakers",
+    name: "Los Angeles Lakerss",
     logo: "https://logodownload.org/wp-content/uploads/2019/06/la-lakers-logo-0.png",
     description:
       "Western Conference Team known for their young and dynamic roster.",
