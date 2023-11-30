@@ -88,13 +88,6 @@ export const teamData = [
     logo: "https://logodownload.org/wp-content/uploads/2019/06/la-lakers-logo-0.png",
     description:
       "Western Conference Team known for their young and dynamic roster.",
-    starters: [
-      { names: "D'Angelo Russell" },
-      { names: "Cam Reddish" },
-      { names: "LeBron James" },
-      { names: "Jarred Vanderbilt " },
-      { names: "Anthony Davis" },
-    ],
   },
   {
     id: 2,
@@ -102,26 +95,12 @@ export const teamData = [
     logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/6/65/Celtics_de_Boston_logo.svg/1024px-Celtics_de_Boston_logo.svg.png",
     description:
       "Eastern Conference Team with a rich history and strong fanbase.",
-    starters: [
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-    ],
   },
   {
     id: 3,
     name: "Miami Heat",
     logo: "https://logowik.com/content/uploads/images/miami-heat8168.jpg",
     description: "Eastern Conference Team known for their star-studded lineup.",
-    starters: [
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-    ],
   },
   {
     id: 4,
@@ -129,13 +108,6 @@ export const teamData = [
     logo: "https://logowik.com/content/uploads/images/dallas-mavericks-mavs4648.jpg",
     description:
       "Western Conference Team with a history of success and iconic players.",
-    starters: [
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-    ],
   },
   {
     id: 5,
@@ -143,12 +115,5 @@ export const teamData = [
     logo: "https://logowik.com/content/uploads/images/605_golden_state.jpg",
     description:
       "Western Conference Team known for their 'Splash Brothers' and championship success.",
-    starters: [
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-      { name: "Player A" },
-    ],
   },
 ];

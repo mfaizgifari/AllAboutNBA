@@ -12,15 +12,6 @@ const DetailTeam = ({ route }) => {
       <View style={styles.content}>
         <Image source={{ uri: logo }} style={styles.logo} />
         <Text style={styles.description}>{description}</Text>
-        <Text style={styles.startersHeader}>Starters:</Text>
-        <View>
-          {starters &&
-            starters.map((player, index) => (
-              <Text key={index} style={styles.starters}>
-                {player.name}
-              </Text>
-            ))}
-        </View>
       </View>
     </View>
   );
